@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>This the title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS Global -->
+    {{- $mySass := resources.Get "sass/myCss.scss" -}}
+    {{- $myCss := $mySass | resources.ToCSS | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ $myCss.RelPermalink }}">
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                test 1
+            </div>
+            <div class="col">
+                test 2
+            </div>
+            <div class="col">
+                test 3
+            </div>
+            <div class="col">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Dropdown button
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Col 1 Ligne 2</p>
+            </div>
+            <div class="col">
+                <p>Col 2 Ligne 2</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card bg-dark text-white">
+                <img class="card-img" src="images/image.jpg" alt="Card image">
+                <!-- <div class="card-img-overlay">
+                  <h5 class="card-title"></h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text">Last updated 3 mins ago</p>
+                </div> -->
+              </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/popper.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+</body>
+
+</html>
