@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
+	<meta name="generator" content="Hugo 0.54.0" />
     <title>This the title</title>
-    <!-- Required meta tags -->
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- CSS Global -->
-    {{- $mySass := resources.Get "sass/myCss.scss" -}}
-    {{- $myCss := $mySass | resources.ToCSS | minify | fingerprint -}}
-    <link rel="stylesheet" href="{{ $myCss.RelPermalink }}">
+    <link rel="stylesheet" href="/sass/myCss.min.c83b9ad38ad929b0d1639cf1c3e4f2b2dcef47cade27af1d66d6f2a3b5c7bbc6.css">
 
 </head>
 
@@ -49,26 +47,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
-                <div class="card bg-dark text-white">
-                    <img class="card-img" src="images/image.jpg" alt="Card image">
-                    <div class="card-img-overlay">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text">Last updated 3 mins ago</p>
-                    </div>
-                </div>
-            </div>
+            <div class="card bg-dark text-white">
+                <img class="card-img" src="images/image.jpg" alt="Card image">
+                
+              </div>
         </div>
     </div>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    {{ $jquery := resources.Get "js/jquery.js" }}
-    {{ $popper := resources.Get "js/popper.js" }}
-    {{ $bootstrap := resources.Get "js/bootstrap.js" }}
-    {{ $global_js := slice $jquery $popper $bootstrap | resources.Concat "js/global.js" | minify | fingerprint }}
-    <script type="text/javascript" src="{{ $global_js.Permalink }}"></script>
-    <!-- Optional JavaScript -->
     
+    
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/popper.js"></script>
+    <script src="scripts/bootstrap.js"></script>
 </body>
 
 </html>
